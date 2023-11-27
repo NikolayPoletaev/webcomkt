@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Задание 1  -->
+    <!-- <input type="button" id="hider" value="Нажмите, что бы спрятать текст"/> 
+    <div id="text">текст</div> 
+    <script> 
+        document.getElementById('hider').onclick = function(){ 
+            document.getElementById('text').hidden = true; 
+        } 
+    </script>  -->
+    <!-- Задание 2 --> 
+    <!-- <input type="button" id="hider" value="Нажмите, чтобы спрятать себя" onclick="hideButton()" /> 
+    <script> 
+        function hideButton() { 
+            var button = document.getElementById('hider'); 
+            button.style.display = 'none'; 
+        } 
+    </script>  -->
+    <!-- Задание 3 --> 
+    <!-- <div id="sweeties" class="menu"> 
+        <span class="title">Сладости(нажми на меня)!</span> 
+        <ul> 
+            <li>Пирожное</li> 
+            <li>Пончик</li> 
+            <li>Мёд</li> 
+        </ul> 
+    </div> 
+    <script> 
+        let menuElem = document.getElementById('sweeties'); 
+        let titleElem = document.querySelector('.title'); 
+        titleElem.onclick = function(){ 
+            menuElem.classList.toggle('open'); 
+        } 
+    </script> 
+    <style> 
+        .menu ul{ 
+            margin: 0; 
+            list-style: none; 
+            padding-left: 20px; 
+            display: none; 
+        } 
+        .menu .title{ 
+            font-size: 18px; 
+            cursor: pointer; 
+        } 
+        .menu .title::before{ 
+            content: '\2764'; 
+            font-size: 80%; 
+            color: red; 
+        } 
+        .menu.open .title::before{ 
+            content: '\26C4'; 
+        } 
+        .menu.open ul{ 
+            display: block; 
+        } 
+    </style>  -->
+<!-- Задание 4 --> 
+<!-- <div> 
+    <div class="pane"> 
+        <h3>Заголовок 1</h3> 
+        <p>Текст сообщения 1</p> 
+    </div> 
+    <div class="pane"> 
+        <h3>Заголовок 2</h3> 
+        <p>Текст сообщения 2</p> 
+    </div> 
+    <div class="pane"> 
+        <h3>Заголовок 3</h3> 
+        <p>Текст сообщения 3</p> 
+    </div> 
+</div> 
+<script> 
+    let panes = document.querySelectorAll('.pane'); 
+    for (let pane of panes){ 
+        pane.insertAdjacentHTML("afterbegin", '<button class="remove-button">[x]</button>'); 
+        pane.firstChild.onclick = () => pane.remove(); 
+    } 
+</script>  -->
+<!-- 5 задание -->
+
+<!-- <h1>Угадайте число от 1 до 100</h1> 
+<input type="number" id="userGuess" placeholder="Введите число"> 
+<button id="guessButton">Попробовать</button> 
+<p id="message"></p> 
+<script> 
+const targetNumber = Math.floor(Math.random() * 100) + 1;  
+let attempts = 0; 
+const userGuessInput = document.getElementById('userGuess');  
+const guessButton = document.getElementById('guessButton');  
+const message = document.getElementById('message'); 
+guessButton.addEventListener('click', () => { 
+    const userGuess = parseInt(userGuessInput.value); 
+if (isNaN(userGuess) || userGuess < 1 || userGuess > 100) { 
+    message.textContent = 'Введите число от 1 до 100';  
+}  
+else {  
+    attempts++; 
+if (userGuess < targetNumber){  
+    message.textContent = 'Загаданное число больше';  
+}else if (userGuess > targetNumber){  
+    message.textContent = 'Загаданное число меньше';  
+    } else {  
+        message.textContent = `Поздравляем, вы угадали число ${targetNumber} за ${attempts} попыток.`;  
+        guessButton.disabled = true;  
+        userGuessInput.disabled = true;  
+}  
+} 
+}); 
+</script> -->
+<!-- 6 задание -->
+
+<div id="carousel" class="carousel"> 
+    <button class="arrow prev">&#9668</button> 
+    <div class="gallery"> 
+        <ul>  
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="/Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+            <li><img src="./Ford-GT-carbon-fiber-car-vehicle-muscle-car-frontal-view-1829399.jpg"></li> 
+        </ul> 
+    </div> 
+    <button class="arrow next">&#9658</button> 
+</div> 
+<style> 
+    body{ 
+        padding: 10px; 
+    } 
+    .carousel{ 
+        position: relative; 
+        width: 398px; 
+        padding: 10px 40px; 
+        border: 1px solid #CCC; 
+        border-radius: 15px; 
+        background: #eee; 
+    } 
+    .carousel img{ 
+        width: 130px; 
+        height: 130px; 
+        display: block; 
+    } 
+    .arrow{ 
+        position: absolute; 
+        top: 60px; 
+        padding: 0; 
+        background: #ddd; 
+        border-radius: 15px; 
+        border: 1px solid gray; 
+        font-size: 24px; 
+        line-height: 24px; 
+        color: #444; 
+        display: block; 
+    } 
+    .arrow:focus{ 
+        outline: none; 
+    } 
+    .arrow:hover{ 
+        background: #CCC; 
+        cursor: pointer; 
+    } 
+    .prev{ 
+        left: 7px; 
+    } 
+    .next{ 
+        right: 7px; 
+    } 
+    .gallery{ 
+        width: 390px; 
+        overflow: hidden; 
+    } 
+    .gallery ul{ 
+        height: 130px; 
+        width: 999px; 
+        margin: 0; 
+        padding: 0; 
+        list-style: none; 
+        transition: margin-left 250ms; 
+        font-size: 0; 
+    } 
+    .gallery li{ 
+        display: inline-block; 
+    } 
+</style> 
+<script> 
+let i = 1; 
+for(let li of carousel.querySelectorAll('li')){ 
+    li.style.position = 'relative'; 
+    li.insertAdjacentHTML('beforeend', `<span style="position:absolute; left:0, top:0"> ${i}</span>`); 
+        i++; 
+    } 
+        let width = 130; 
+        let count = 3; 
+        let list = carousel.querySelector('ul'); 
+        let listElems = carousel.querySelectorAll('li'); 
+        let position = 0; 
+        arousel.querySelector('.prev').onclick = function(){ 
+            position += width*count; 
+            position = Math.min(position, 0) 
+            list.style.marginLeft = position + 'px'; 
+        }; 
+        carousel.querySelector('.next').onclick = function(){ 
+            position -= width*count; 
+            position = Math.max(position, -width * (listElems.length = count)); 
+            list.style.marginLeft = position + 'px'; 
+        } 
+</script>
+</body>
+</html>
